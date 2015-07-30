@@ -2,6 +2,8 @@
 
 This Google Cast sample application shows how to use the Remote Display API.
 
+*_Note_*: The Remote Display library is designed for devices with more than 512MB of memory, so the sample may not function on older devices such as the iPhone 4s.
+
 ## Dependencies
 * google-cast-sdk 2.7.0 or greater
 * google-cast-remote-display-sdk 2.7.0 or greater
