@@ -35,6 +35,11 @@
  */
 @property(weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
+/**
+ * Outlet for the message about scanning when scanning.
+ */
+@property(weak, nonatomic) IBOutlet UILabel *scanningLabel;
+
 @end
 
 @implementation InitialViewController
@@ -65,9 +70,11 @@
 - (void)updateButtonDisplay {
   if ([ChromecastDeviceController sharedInstance].deviceScanner.devices.count > 0) {
     _playButton.hidden = NO;
+    _scanningLabel.hidden = YES;
     [_activityIndicator stopAnimating];
   } else {
     _playButton.hidden = YES;
+    _scanningLabel.hidden = NO;
     [_activityIndicator startAnimating];
   }
 }

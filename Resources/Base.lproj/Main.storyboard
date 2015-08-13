@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="s2b-eb-sJn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="s2b-eb-sJn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -97,6 +97,15 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="cI2-Er-FRE">
                                 <rect key="frame" x="189" y="506" width="37" height="37"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scanning for Google Cast devices..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IQ-hK-2Xx">
+                                <rect key="frame" x="62" y="476" width="290" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="x6A-f6-cBU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -104,11 +113,13 @@
                             <constraint firstAttribute="centerX" secondItem="sEy-1e-xaq" secondAttribute="centerX" id="0Xl-YW-D6p"/>
                             <constraint firstItem="cI2-Er-FRE" firstAttribute="centerY" secondItem="sEy-1e-xaq" secondAttribute="centerY" constant="1" id="2ji-au-FvF"/>
                             <constraint firstAttribute="centerY" secondItem="9D8-en-t5t" secondAttribute="centerY" constant="100" id="3n7-a8-MNd"/>
+                            <constraint firstItem="cI2-Er-FRE" firstAttribute="top" secondItem="8IQ-hK-2Xx" secondAttribute="bottom" constant="8" id="6HL-se-qDA"/>
                             <constraint firstItem="hoP-UI-FqJ" firstAttribute="leading" secondItem="srB-XP-Yer" secondAttribute="leading" id="9iX-5h-2bD"/>
                             <constraint firstAttribute="centerX" secondItem="9D8-en-t5t" secondAttribute="centerX" id="CY9-Po-wnU"/>
                             <constraint firstAttribute="trailing" secondItem="hoP-UI-FqJ" secondAttribute="trailing" id="Doh-Id-ahC"/>
                             <constraint firstItem="sEy-1e-xaq" firstAttribute="top" secondItem="9D8-en-t5t" secondAttribute="top" constant="286" id="FuD-Ra-g6B"/>
                             <constraint firstItem="hoP-UI-FqJ" firstAttribute="top" secondItem="srB-XP-Yer" secondAttribute="top" id="O2w-rO-WEf"/>
+                            <constraint firstAttribute="centerX" secondItem="8IQ-hK-2Xx" secondAttribute="centerX" id="U3V-XX-vey"/>
                             <constraint firstAttribute="centerX" secondItem="cI2-Er-FRE" secondAttribute="centerX" id="Utf-y8-QUS"/>
                             <constraint firstItem="9D8-en-t5t" firstAttribute="leading" secondItem="srB-XP-Yer" secondAttribute="leadingMargin" constant="20" id="nfM-Rv-bhh"/>
                             <constraint firstItem="Jp4-lI-QoG" firstAttribute="top" secondItem="hoP-UI-FqJ" secondAttribute="bottom" id="oYy-vS-4Ta"/>
