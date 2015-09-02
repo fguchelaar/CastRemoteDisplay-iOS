@@ -2,12 +2,14 @@
 
 This Google Cast sample application shows how to use the Remote Display API.
 
+*_Note_*: The Remote Display library is designed for devices with more than 512MB of memory, so the sample may not function on older devices such as the iPhone 4s.
+
 ## Dependencies
 * google-cast-sdk 2.7.0 or greater
 * google-cast-remote-display-sdk 2.7.0 or greater
 * The Amazing Audio Engine (theamazingaudioengine.com) 1.4 or greater
 
-All can be installed using [https://guides.cocoapods.org/using/getting-started.html#getting-started](Cocoapods).
+All can be installed using [Cocoapods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
 ## Setup Instructions
 * Check out the code from GitHub
