@@ -126,6 +126,7 @@
 #pragma mark - ChromecastDeviceController
 
 - (void)didDisconnect {
+  [_audioController stop];
   [ChromecastDeviceController sharedInstance].remoteDisplaySession = nil;
   // Bounce back to the main view.
   [self performSegueWithIdentifier:@"unwindSegue" sender:self];

@@ -52,6 +52,9 @@
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   [self updateButtonDisplay];
+
+  [ChromecastDeviceController sharedInstance].delegate = self;
+
   // Listen for updates to the Cast status. See ChromecastDeviceManager.h.
   [[NSNotificationCenter defaultCenter]
       addObserver:self
