@@ -53,9 +53,8 @@
           initWithAudioDescription:[AEAudioController nonInterleavedFloatStereoAudioDescription]
                       inputEnabled:NO];
   NSURL *file = [[NSBundle mainBundle] URLForResource:@"sound_new" withExtension:@"mp3"];
-  self.loop = [AEAudioFilePlayer audioFilePlayerWithURL:file
-                                        audioController:_audioController
-                                                  error:NULL];
+  self.loop = [AEAudioFilePlayer audioFilePlayerWithURL:file error:NULL];
+
   _loop.loop = YES;
   [_audioController addChannels:@[_loop]];
 
@@ -77,7 +76,7 @@
                                     AudioBufferList          *audio) {
                                     ChromecastDeviceController *ccdc =
                                         [ChromecastDeviceController sharedInstance];
-                                    GCKRemoteDisplaySession *session = ccdc.remoteDisplaySession;
+                                    id<GCKRemoteDisplaySession> session = ccdc.remoteDisplaySession;
                                     if (audio && session) {
                                       [session enqueueAudioBuffer:audio
                                                            frames:frames
@@ -115,7 +114,7 @@
 - (void)updateSelectedCastController {
   UIViewController* vc = self.selectedViewController;
   id<CastRemoteDisplayDemoController> controller = (id<CastRemoteDisplayDemoController>)vc;
-  GCKRemoteDisplaySession *remoteDisplaySession =
+  id<GCKRemoteDisplaySession> remoteDisplaySession =
       [ChromecastDeviceController sharedInstance].remoteDisplaySession;
 
   if (controller.castRemoteDisplaySession != remoteDisplaySession) {

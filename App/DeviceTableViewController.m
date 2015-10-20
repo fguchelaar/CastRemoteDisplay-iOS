@@ -82,7 +82,7 @@ static NSString * const kVersionFooter = @"v";
     return 1;
   }
   // Return the number of rows in the section.
-  if (_delegate.deviceManager.applicationConnectionState != GCKConnectionStateConnected) {
+  if (_delegate.deviceManager.connectionState != GCKConnectionStateConnected) {
     self.title = @"Connect to";
     return _delegate.deviceScanner.devices.count;
   } else {

@@ -16,12 +16,11 @@
 
 #import <GoogleCast/GCKDeviceScanner.h>
 #import <GoogleCast/GCKMediaStatus.h>
+#import <GoogleCastRemoteDisplay/GCKRemoteDisplaySession.h>
 
 @class GCKDevice;
 @class GCKDeviceManager;
 @class GCKRemoteDisplayChannel;
-@class GCKRemoteDisplaySession;
-
 extern NSString * const kCastViewController;
 
 @protocol ChromecastDeviceControllerDelegate <NSObject>
@@ -85,7 +84,7 @@ extern NSString * const kCastViewController;
 /**
  *  The remote display session to send data over.
  */
-@property(nonatomic, strong) GCKRemoteDisplaySession *remoteDisplaySession;
+@property(nonatomic, strong) id<GCKRemoteDisplaySession> remoteDisplaySession;
 
 /**
  *  Main access point for the class. Use this to retrieve an object you can use.

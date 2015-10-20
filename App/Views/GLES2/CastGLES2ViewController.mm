@@ -129,7 +129,6 @@ GLuint LoadProgram(NSString* name, NSDictionary* bindings) {
 
 - (void)viewDidDisappear:(BOOL)animated {
   [(GLKView*)self.view deleteDrawable];
-  ((GLKView*)self.view).context = nil;
 
   [self teardownGLESForCast];
   [self teardownGLESLocal];
@@ -228,11 +227,11 @@ GLuint LoadProgram(NSString* name, NSDictionary* bindings) {
 
 #pragma mark castRemoteDisplaySession
 
-- (GCKRemoteDisplaySession*)castRemoteDisplaySession {
+- (id<GCKRemoteDisplaySession>)castRemoteDisplaySession {
   return _castInput.session;
 }
 
-- (void)setCastRemoteDisplaySession:(GCKRemoteDisplaySession*)castRemoteDisplaySession {
+- (void)setCastRemoteDisplaySession:(id<GCKRemoteDisplaySession>)castRemoteDisplaySession {
   if (castRemoteDisplaySession == _castInput.session) {
     return;
   }
@@ -253,7 +252,7 @@ GLuint LoadProgram(NSString* name, NSDictionary* bindings) {
  *
  *  @param session A connected Cast Remote Display session.
  */
-- (void)prepareGLESForCast:(GCKRemoteDisplaySession*)session {
+- (void)prepareGLESForCast:(id<GCKRemoteDisplaySession>)session {
   _castInput = [[GCKOpenGLESVideoFrameInput alloc] initWithSession:session];
   _castInput.context = _context;
 
