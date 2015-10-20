@@ -345,11 +345,11 @@ const size_t kMaxBytesPerFrame = 1024 * 1024;
 
 #pragma mark CAST
 
-- (GCKRemoteDisplaySession*)castRemoteDisplaySession {
+- (id<GCKRemoteDisplaySession>)castRemoteDisplaySession {
   return _castInput.session;
 }
 
-- (void)setCastRemoteDisplaySession:(GCKRemoteDisplaySession*)castRemoteDisplaySession {
+- (void)setCastRemoteDisplaySession:(id<GCKRemoteDisplaySession>)castRemoteDisplaySession {
   if (castRemoteDisplaySession == _castInput.session) {
     return;
   }
@@ -364,7 +364,7 @@ const size_t kMaxBytesPerFrame = 1024 * 1024;
 /*
  * Use the GCK Remote Display Metal frame input with the given session.
  */
-- (void)prepareMetalForCast:(GCKRemoteDisplaySession*)session {
+- (void)prepareMetalForCast:(id<GCKRemoteDisplaySession>)session {
   _castInput = [[GCKMetalVideoFrameInput alloc] initWithSession:session];
   _castInput.device = _device;
 

@@ -20,6 +20,4 @@
 
 @interface CastMetalViewController : UIViewController<CastRemoteDisplayDemoController>
 
-@property(nonatomic, weak) GCKRemoteDisplaySession* castRemoteDisplaySession;
-
 @end

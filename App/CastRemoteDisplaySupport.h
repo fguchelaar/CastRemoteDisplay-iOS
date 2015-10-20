@@ -15,8 +15,7 @@
 //
 
 #import <Foundation/NSString.h>
-
-@class GCKRemoteDisplaySession;
+#import <GoogleCastRemoteDisplay/GCKRemoteDisplaySession.h>
 
 extern NSString* const CastRemoteDisplayAvailableNotification;
 
@@ -26,6 +25,6 @@ extern NSString* const CastRemoteDisplayAvailableNotification;
  *  The current GCKRemoteDisplaySession, to be used for sending audio and video
  *  frames to the cast device.
  */
-@property(nonatomic, weak) GCKRemoteDisplaySession* castRemoteDisplaySession;
+@property(nonatomic, weak) id<GCKRemoteDisplaySession> castRemoteDisplaySession;
 
 @end

@@ -22,7 +22,7 @@
 
 // Add a Cast Remote Display Receiver application ID below to enable the application.
 // You can register one at https://cast.google.com/publish/
-static NSString * const kCastApplicationID = @"YOUR_CAST_APPLICATION_ID";
+static NSString * const kCastApplicationID = @"CAST_APPLICATION_ID";
 #warning Add your application ID above (and you can delete this #warning after)!
 
 @implementation AppDelegate

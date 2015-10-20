@@ -120,7 +120,7 @@
 }
 
 - (void)remoteDisplayChannel:(GCKRemoteDisplayChannel*)channel
-             didBeginSession:(GCKRemoteDisplaySession*)session {
+             didBeginSession:(id<GCKRemoteDisplaySession>)session {
   [ChromecastDeviceController sharedInstance].remoteDisplaySession = session;
   [self updateButtonDisplay];
 

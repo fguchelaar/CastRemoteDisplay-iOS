@@ -20,9 +20,4 @@
 
 @interface CastGLES2ViewController : GLKViewController<CastRemoteDisplayDemoController>
 
-/**
- *  The Remote Display session frames should be sent over.
- */
-@property(nonatomic, weak) GCKRemoteDisplaySession* castRemoteDisplaySession;
-
 @end
