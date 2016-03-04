@@ -31,6 +31,8 @@
 
 @implementation RootViewController
 
+const float k48kHZ = 48000.0;
+
 - (void)viewDidLoad {
   [super viewDidLoad];
 
@@ -48,10 +50,22 @@
     self.viewControllers = viewControllers;
   }
 
+  // Temporary workaround for known issue where sound crackles on new Chromecast devices.
+  AudioStreamBasicDescription cracklingSoundWorkaroundStereo = {
+    .mFormatID = kAudioFormatLinearPCM,
+    .mFormatFlags = kAudioFormatFlagIsFloat | kAudioFormatFlagIsPacked |
+        kAudioFormatFlagIsNonInterleaved,
+    .mChannelsPerFrame = 2,
+    .mBytesPerPacket = sizeof(float),
+    .mFramesPerPacket = 1,
+    .mBytesPerFrame = sizeof(float),
+    .mBitsPerChannel = 8 * sizeof(float),
+    .mSampleRate = k48kHZ
+  };
+
   self.audioController =
-      [[AEAudioController alloc]
-          initWithAudioDescription:[AEAudioController nonInterleavedFloatStereoAudioDescription]
-                      inputEnabled:NO];
+      [[AEAudioController alloc] initWithAudioDescription:cracklingSoundWorkaroundStereo
+                                                  options:AEAudioControllerOptionEnableOutput];
   NSURL *file = [[NSBundle mainBundle] URLForResource:@"sound_new" withExtension:@"mp3"];
   self.loop = [AEAudioFilePlayer audioFilePlayerWithURL:file error:NULL];
 
